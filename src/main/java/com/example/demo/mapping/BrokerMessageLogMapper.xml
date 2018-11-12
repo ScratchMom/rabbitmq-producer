@@ -23,7 +23,7 @@
     delete from broker_message_log
     where message_id = #{messageId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.test.db.model.BrokerMessageLog" >
+  <insert id="insert" parameterType="com.example.demo.entity.BrokerMessageLog" >
     insert into broker_message_log (message_id, message, try_count, 
       status, next_retry, create_time, 
       update_time)
@@ -31,7 +31,7 @@
       #{status,jdbcType=VARCHAR}, #{nextRetry,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.test.db.model.BrokerMessageLog" >
+  <insert id="insertSelective" parameterType="com.example.demo.entity.BrokerMessageLog" >
     insert into broker_message_log
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="messageId != null" >
@@ -80,7 +80,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.test.db.model.BrokerMessageLog" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.BrokerMessageLog" >
     update broker_message_log
     <set >
       <if test="message != null" >
@@ -104,7 +104,7 @@
     </set>
     where message_id = #{messageId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.test.db.model.BrokerMessageLog" >
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.BrokerMessageLog" >
     update broker_message_log
     set message = #{message,jdbcType=VARCHAR},
       try_count = #{tryCount,jdbcType=INTEGER},

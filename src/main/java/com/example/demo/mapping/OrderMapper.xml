@@ -19,13 +19,13 @@
     delete from t_order
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.test.db.model.Order" >
+  <insert id="insert" parameterType="com.example.demo.entity.Order" >
     insert into t_order (id, name, message_id
       )
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{messageId,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.test.db.model.Order" >
+  <insert id="insertSelective" parameterType="com.example.demo.entity.Order" >
     insert into t_order
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -50,7 +50,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.test.db.model.Order" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.Order" >
     update t_order
     <set >
       <if test="name != null" >
@@ -62,7 +62,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.test.db.model.Order" >
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.entity.Order" >
     update t_order
     set name = #{name,jdbcType=VARCHAR},
       message_id = #{messageId,jdbcType=VARCHAR}

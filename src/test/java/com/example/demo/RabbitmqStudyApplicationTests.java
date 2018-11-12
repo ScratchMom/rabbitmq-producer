@@ -24,8 +24,8 @@ public class RabbitmqStudyApplicationTests {
     @Test
     public void testsend01() throws Exception{
         Order order = new Order();
-        order.setId("12344");
-        order.setName("测试订单002");
+        order.setId("123456");
+        order.setName("测试订单003");
         order.setMessageId(System.currentTimeMillis() + "$" + UUID.randomUUID().toString());
         orderSender.send(order);
     }
